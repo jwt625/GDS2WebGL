@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+#%%
 import base64
 import argparse
 import colorsys
@@ -9,7 +9,7 @@ import gdspy
 import pyclipper
 import mapbox_earcut as earcut
 
-
+#%%
 def area_of_poly(poly):
     '''
     Returns: The area enclosed by given polygon.
