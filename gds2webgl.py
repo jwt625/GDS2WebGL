@@ -348,27 +348,50 @@ class Layer:
 
         return base64.b64encode(bvlq2s_encode(all_tris)).decode('utf-8')
 
+#  Skywater 130nm PDK layers:
+# layers = [
+#     Layer(name='p-substrate', layer_datatype=(235, 4),  elevation=0,         thickness=0,    color=(0/3, 0.7, 0.35)   ),
+#     Layer(name='n-well',      layer_datatype=(64, 20),  elevation=0,         thickness=0,    color=(2/3, 0.7, 0.35)   ),
+#     Layer(name='diff (opp.)', layer_datatype=(65, 20),  elevation=0,         thickness=0,    color=(2/3, 0.0, 0.15)   ),
+#     Layer(name='tap (same)',  layer_datatype=(65, 44),  elevation=0,         thickness=0,    color=(2/3, 0.0, 0.15)   ),
+#     Layer(name='poly',        layer_datatype=(66, 20),  elevation=500,       thickness=400,  color=(1.5/3, 0.55, 0.25)),
+#     Layer(name='nwell.pin',   layer_datatype=(64, 16),  elevation=940,       thickness=940,  color=(0.4/3, 0.65, 0.3) ),
+#     Layer(name='pwell.pin',   layer_datatype=(122, 16), elevation=940,       thickness=940,  color=(0.4/3, 0.65, 0.3) ),
+#     Layer(name='licon',       layer_datatype=(66, 44),  elevation=940,       thickness=940,  color=(0.4/3, 0.65, 0.3) ),
+#     Layer(name='li',          layer_datatype=(67, 20),  elevation=1011,      thickness=100,  color=(0.4/3, 0.65, 0.3) ),
+#     Layer(name='mcon',        layer_datatype=(67, 44),  elevation=1380,      thickness=380,  color=(1/3, 0.8, 0.45)   ),
+#     Layer(name='m1',          layer_datatype=(68, 20),  elevation=1380+360,  thickness=360,  color=(1/3, 0.8, 0.45)   ),
+#     Layer(name='via',         layer_datatype=(68, 44),  elevation=2000,      thickness=270,  color=(1/3, 0.8, 0.6)    ),
+#     Layer(name='m2',          layer_datatype=(69, 20),  elevation=2000+360,  thickness=360,  color=(1/3, 0.8, 0.6)    ),
+#     Layer(name='via2',        layer_datatype=(69, 44),  elevation=2790,      thickness=420,  color=(1/3, 0.8, 0.7)    ),
+#     Layer(name='m3',          layer_datatype=(70, 20),  elevation=2790+850,  thickness=850,  color=(1/3, 0.8, 0.7)    ),
+#     Layer(name='via3',        layer_datatype=(70, 44),  elevation=4020,      thickness=390,  color=(1/3, 0.8, 0.8)    ),
+#     Layer(name='m4',          layer_datatype=(71, 20),  elevation=4020+850,  thickness=850,  color=(1/3, 0.8, 0.8)    ),
+#     Layer(name='via4',        layer_datatype=(71, 44),  elevation=5370,      thickness=510,  color=(1/3, 0.8, 0.9)    ),
+#     Layer(name='m5',          layer_datatype=(72, 20),  elevation=5370+1260, thickness=1260, color=(1/3, 0.8, 0.9)    )
+# ]
 
+# LNSOI layers:
 layers = [
-    Layer(name='p-substrate', layer_datatype=(235, 4),  elevation=0,         thickness=0,    color=(0/3, 0.7, 0.35)   ),
-    Layer(name='n-well',      layer_datatype=(64, 20),  elevation=0,         thickness=0,    color=(2/3, 0.7, 0.35)   ),
-    Layer(name='diff (opp.)', layer_datatype=(65, 20),  elevation=0,         thickness=0,    color=(2/3, 0.0, 0.15)   ),
-    Layer(name='tap (same)',  layer_datatype=(65, 44),  elevation=0,         thickness=0,    color=(2/3, 0.0, 0.15)   ),
-    Layer(name='poly',        layer_datatype=(66, 20),  elevation=500,       thickness=400,  color=(1.5/3, 0.55, 0.25)),
-    Layer(name='nwell.pin',   layer_datatype=(64, 16),  elevation=940,       thickness=940,  color=(0.4/3, 0.65, 0.3) ),
-    Layer(name='pwell.pin',   layer_datatype=(122, 16), elevation=940,       thickness=940,  color=(0.4/3, 0.65, 0.3) ),
-    Layer(name='licon',       layer_datatype=(66, 44),  elevation=940,       thickness=940,  color=(0.4/3, 0.65, 0.3) ),
-    Layer(name='li',          layer_datatype=(67, 20),  elevation=1011,      thickness=100,  color=(0.4/3, 0.65, 0.3) ),
-    Layer(name='mcon',        layer_datatype=(67, 44),  elevation=1380,      thickness=380,  color=(1/3, 0.8, 0.45)   ),
-    Layer(name='m1',          layer_datatype=(68, 20),  elevation=1380+360,  thickness=360,  color=(1/3, 0.8, 0.45)   ),
-    Layer(name='via',         layer_datatype=(68, 44),  elevation=2000,      thickness=270,  color=(1/3, 0.8, 0.6)    ),
-    Layer(name='m2',          layer_datatype=(69, 20),  elevation=2000+360,  thickness=360,  color=(1/3, 0.8, 0.6)    ),
-    Layer(name='via2',        layer_datatype=(69, 44),  elevation=2790,      thickness=420,  color=(1/3, 0.8, 0.7)    ),
-    Layer(name='m3',          layer_datatype=(70, 20),  elevation=2790+850,  thickness=850,  color=(1/3, 0.8, 0.7)    ),
-    Layer(name='via3',        layer_datatype=(70, 44),  elevation=4020,      thickness=390,  color=(1/3, 0.8, 0.8)    ),
-    Layer(name='m4',          layer_datatype=(71, 20),  elevation=4020+850,  thickness=850,  color=(1/3, 0.8, 0.8)    ),
-    Layer(name='via4',        layer_datatype=(71, 44),  elevation=5370,      thickness=510,  color=(1/3, 0.8, 0.9)    ),
-    Layer(name='m5',          layer_datatype=(72, 20),  elevation=5370+1260, thickness=1260, color=(1/3, 0.8, 0.9)    )
+    Layer(name='ALD_BF', layer_datatype=(1, 1),  elevation=0,         thickness=100,    color=(0/3, 0.7, 0.35)   ),
+    Layer(name='ALD_Neg',      layer_datatype=(1, 2),  elevation=0,         thickness=100,    color=(2/3, 0.7, 0.35)   ),
+    Layer(name='LN_HD', layer_datatype=(2, 1),  elevation=1000,         thickness=3000,    color=(2/3, 0.0, 0.15)   ),
+    Layer(name='LN_HD_Neg',  layer_datatype=(2, 2),  elevation=1000,         thickness=3000,    color=(2/3, 0.0, 0.15)   ),
+    Layer(name='LN_LD',        layer_datatype=(2, 3),  elevation=1000,       thickness=3000,  color=(1.5/3, 0.55, 0.25)),
+    Layer(name='LN_LD_Neg',   layer_datatype=(2, 4),  elevation=1000,       thickness=3000,  color=(0.4/3, 0.65, 0.3) ),
+    Layer(name='LN_LD_Pos',   layer_datatype=(2, 5), elevation=1000,       thickness=3000,  color=(0.4/3, 0.65, 0.3) ),
+    Layer(name='LN_MD',       layer_datatype=(2, 6),  elevation=1000,       thickness=3000,  color=(0.4/3, 0.65, 0.3) ),
+    Layer(name='LN_MD_Neg',          layer_datatype=(2, 7),  elevation=1000,      thickness=300,  color=(0.4/3, 0.65, 0.3) ),
+    Layer(name='LN_PTP',        layer_datatype=(2, 8),  elevation=1000,      thickness=3000,  color=(1/3, 0.8, 0.45)   ),
+    Layer(name='LN_TBR',          layer_datatype=(2, 9),  elevation=1000,  thickness=3000,  color=(1/3, 0.8, 0.45)   ),
+    Layer(name='MT_B',         layer_datatype=(3, 1),  elevation=2000,      thickness=3000,  color=(1/3, 0.8, 0.6)    ),
+    Layer(name='MT_S',          layer_datatype=(3, 2),  elevation=2000,  thickness=3000,  color=(1/3, 0.8, 0.6)    ),
+    Layer(name='SOI_BF',        layer_datatype=(4, 1),  elevation=1500,      thickness=2200,  color=(1/3, 0.8, 0.7)    ),
+    Layer(name='SOI_Si',          layer_datatype=(4, 2),  elevation=1500,  thickness=2200,  color=(1/3, 0.8, 0.7)    ),
+    Layer(name='SOI_Si_Holes',        layer_datatype=(4, 3),  elevation=1500,      thickness=2200,  color=(1/3, 0.8, 0.8)    ),
+    # Layer(name='m4',          layer_datatype=(71, 20),  elevation=4020+850,  thickness=850,  color=(1/3, 0.8, 0.8)    ),
+    # Layer(name='via4',        layer_datatype=(71, 44),  elevation=5370,      thickness=510,  color=(1/3, 0.8, 0.9)    ),
+    # Layer(name='m5',          layer_datatype=(72, 20),  elevation=5370+1260, thickness=1260, color=(1/3, 0.8, 0.9)    )
 ]
 
 
@@ -390,50 +413,115 @@ def write_data(f):
     f.write("];\n")
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Translate GDSII to WebGL for visualization.')
-    parser.add_argument('-i', '--input', required=True, help='Input GDSII file.')
-    parser.add_argument('-o', '--output', required=True, help='Output file. "<file>.html" outputs a self-contained webpage, "<file>.js" outputs 3D data as Javascript.')
-    args = parser.parse_args()
-    if args.output.endswith('.html'):
-        print(f'Reading index.html')
-        with open('index.html', 'r') as f:
-            index_html = f.readlines()
-        print(f'Reading bundle.js')
-        with open('bundle.js', 'r') as f:
-            bundle_js = f.readlines()
-    print(f'Loading {args.input}')
-    gdslib = gdspy.GdsLibrary(infile=args.input)
-    topcell = gdslib.top_level()[0]
-    print(f'Top {topcell.name}')
 
-    for l in layers:
-        l.add_gds_polys(gdslib)
+#%% old
+# if __name__ == '__main__':
+#     parser = argparse.ArgumentParser(description='Translate GDSII to WebGL for visualization.')
+#     parser.add_argument('-i', '--input', required=True, help='Input GDSII file.')
+#     parser.add_argument('-o', '--output', required=True, help='Output file. "<file>.html" outputs a self-contained webpage, "<file>.js" outputs 3D data as Javascript.')
+#     args = parser.parse_args()
+#     if args.output.endswith('.html'):
+#         print(f'Reading index.html')
+#         with open('index.html', 'r') as f:
+#             index_html = f.readlines()
+#         print(f'Reading bundle.js')
+#         with open('bundle.js', 'r') as f:
+#             bundle_js = f.readlines()
+#     print(f'Loading {args.input}')
+#     gdslib = gdspy.GdsLibrary(infile=args.input)
+#     topcell = gdslib.top_level()[0]
+#     print(f'Top {topcell.name}')
 
-    bbox = topcell.get_bounding_box()
-    origin_um = bbox[0]*gdslib.unit*1e6
-    max_um = bbox[1]*gdslib.unit*1e6
-    size_um = max_um-origin_um
-    print(f'PhysicalSize {size_um[0]:.3f} x {size_um[1]:.3f} µm')
-    scale = 1.0/max(size_um)
-    print(f'ScalingFactor {scale:.3e}')
-    print(f'ModelSize {size_um[0]*scale:.3f} x {size_um[1]*scale:.3f}')
+#     for l in layers:
+#         l.add_gds_polys(gdslib)
+
+#     bbox = topcell.get_bounding_box()
+#     origin_um = bbox[0]*gdslib.unit*1e6
+#     max_um = bbox[1]*gdslib.unit*1e6
+#     size_um = max_um-origin_um
+#     print(f'PhysicalSize {size_um[0]:.3f} x {size_um[1]:.3f} µm')
+#     scale = 1.0/max(size_um)
+#     print(f'ScalingFactor {scale:.3e}')
+#     print(f'ModelSize {size_um[0]*scale:.3f} x {size_um[1]*scale:.3f}')
     
-    with open(args.output, 'w') as f:
-        if args.output.endswith('.html'):
-            for l in index_html:
-                l = l.replace('</title>', f' - {args.input}</title>')
-                if '<script src="data.js"></script>' in l:
-                    f.write('<script>\n')
-                    write_data(f)
-                    f.write('</script>\n')
-                elif '<script src="bundle.js"></script>' in l:
-                    f.write('<script>\n')
-                    for ll in bundle_js:
-                        f.write(ll)
-                    f.write('</script>\n')
-                else:
-                    f.write(l)
-        else:
-            write_data(f)
+#     with open(args.output, 'w') as f:
+#         if args.output.endswith('.html'):
+#             for l in index_html:
+#                 l = l.replace('</title>', f' - {args.input}</title>')
+#                 if '<script src="data.js"></script>' in l:
+#                     f.write('<script>\n')
+#                     write_data(f)
+#                     f.write('</script>\n')
+#                 elif '<script src="bundle.js"></script>' in l:
+#                     f.write('<script>\n')
+#                     for ll in bundle_js:
+#                         f.write(ll)
+#                     f.write('</script>\n')
+#                 else:
+#                     f.write(l)
+#         else:
+#             write_data(f)
 
+
+# %%
+
+# python3 gds2webgl.py -i TLS05_20211118_clean.gds -o out.html
+# if __name__ == '__main__':
+#     parser = argparse.ArgumentParser(description='Translate GDSII to WebGL for visualization.')
+#     parser.add_argument('-i', '--input', required=True, help='Input GDSII file.')
+#     parser.add_argument('-o', '--output', required=True, help='Output file. "<file>.html" outputs a self-contained webpage, "<file>.js" outputs 3D data as Javascript.')
+#     args = parser.parse_args()
+
+args_input = 'TLS05_20211118_clean.gds'
+args_output = 'out_LNSOI.html'
+# args_input = 'tt_um_wokwi_423085115051780097.gds'
+# args_output = 'out_tt.html'
+
+if args_output.endswith('.html'):
+    print(f'Reading index.html')
+    with open('index.html', 'r') as f:
+        index_html = f.readlines()
+    print(f'Reading bundle.js')
+    with open('bundle.js', 'r') as f:
+        bundle_js = f.readlines()
+
+print(f'Loading {args_input}')
+gdslib = gdspy.GdsLibrary(infile=args_input)
+topcell = gdslib.top_level()[0]
+print(f'Top {topcell.name}')
+
+#%%
+for l in layers:
+    print(l)
+    l.add_gds_polys(gdslib)
+
+#%%
+bbox = topcell.get_bounding_box()
+origin_um = bbox[0]*gdslib.unit*1e6
+max_um = bbox[1]*gdslib.unit*1e6
+size_um = max_um-origin_um
+print(f'PhysicalSize {size_um[0]:.3f} x {size_um[1]:.3f} µm')
+scale = 1.0/max(size_um)
+print(f'ScalingFactor {scale:.3e}')
+print(f'ModelSize {size_um[0]*scale:.3f} x {size_um[1]*scale:.3f}')
+
+with open(args_output, 'w') as f:
+    if args_output.endswith('.html'):
+        for l in index_html:
+            l = l.replace('</title>', f' - {args_input}</title>')
+            if '<script src="data.js"></script>' in l:
+                f.write('<script>\n')
+                write_data(f)
+                f.write('</script>\n')
+            elif '<script src="bundle.js"></script>' in l:
+                f.write('<script>\n')
+                for ll in bundle_js:
+                    f.write(ll)
+                f.write('</script>\n')
+            else:
+                f.write(l)
+    else:
+        write_data(f)
+
+
+# %%
